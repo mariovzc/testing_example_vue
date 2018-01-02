@@ -1,12 +1,10 @@
 import { mount } from 'avoriaz'
 import List from '@/components/List'
-import Vue from 'vue'
 
 describe('List.vue', () => {
   it('displays items from the list', () => {
-    const Construcor = Vue.extend(List)
-    const ListComponent = new Construcor().$mount()
-    expect(ListComponent.$el.textContent).to.contain('play games')
+    const ListComponent = mount(List)
+    expect(ListComponent.text()).to.contain('play games')
   })
   it('adds a new item to list on click with avoriaz', () => {
     /** OLD WAY */
