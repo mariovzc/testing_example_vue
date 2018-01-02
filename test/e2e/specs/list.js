@@ -12,11 +12,12 @@ module.exports = {
       .assert.containsText('li', 'buy food')
   },
   'add Elements to the list': function (browser) {
+    const text = 'Night Watch'
     browser
-      .setValue('input[type=text]', 'Night Watch')
+      .setValue('input[type=text]', text)
       .click('button[name=add]')
       .pause(1000)
-      .assert.containsText('ul', 'Night Watch')
+      .assert.containsText('ul', text)
       .end()
   }
 }
